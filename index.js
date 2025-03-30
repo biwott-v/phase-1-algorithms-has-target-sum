@@ -1,5 +1,15 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    let sum = array.map((anarray) => anarray + array[i]);
+    sum.splice(i, 1);
+    for (let y = 0; y < sum.length; y++) {
+      if (sum[y] === target) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 /* 
